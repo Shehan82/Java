@@ -23,6 +23,27 @@ class shehan
 
 }
 
+final class class1
+{
+	int x;
+}
+
+// class class2 extends class1
+// {
+// 	int y=x;
+// }
+
+abstract class class2
+{
+	int b=20;
+}
+
+class class3 extends class2
+{
+	int x=b;
+	//System.out.println(x);
+}
+
 class myclass
 {
 	static int print(int num)
@@ -41,6 +62,8 @@ class myclass
 		shehan obj=new shehan(200);
 		print("hello");
 		print(obj.x);
+		class3 boo= new class3();
+		print(boo.x);
 
 	}
 }
