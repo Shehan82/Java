@@ -22,6 +22,23 @@ class naive
 			while(j<m && tarray[i+j]==parray[j])
 			{
 				j++;
+
+			// while(j<m && tarray[i+j]==parray[j])
+			// {
+			// 	j++;
+			// }
+
+			for (j=0;j<m ;j++ )
+			{
+				if(tarray[j+i]==parray[j])
+				{
+					continue;
+				}
+				else
+				{
+					break;
+				}
+
 			}
 
 			if(j==m)
