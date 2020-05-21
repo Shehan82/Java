@@ -61,60 +61,66 @@ class readfilebm
 
 			while(read.hasNextLine())
 			{
-				count1 = 0;
+				//count1 = 0;
 				count++;
 
 				
 				String text = read.nextLine();
-				int tp_length = text.length();
-				char[] tp_array = text.toCharArray();
 
-				if(tp_length<55)
-					continue;
-				else
+				if(count>21)
 				{
-					for(int k=0;k<55;k++)
-					{
-						
-						t_array[k]=tp_array[k];
-					}
-				}
+					int tp_length = text.length();
+					char[] tp_array = text.toCharArray();
 
-				int t_length = t_array.length;
-
-				
-
-				// if(count1 > 0)
-				// {
-				// 	continue;
-				// }
-
-				bad(p_array, p_length, badchar);
-
-				int s=0;
-
-				while(s<= (t_length- p_length))
-				{
-					int j=p_length-1;
-
-					while(j>=0 && p_array[j]==t_array[s+j])
-					{
-						j--;
-					}
-
-					if(j<0)
-					{
-						System.out.println("Patterns occur at shift = " + s + " " + count);
-
-						if(s+p_length < t_length)
-							s = s + p_length - badchar[t_array[s+p_length]];
-						else
-							s = s + 1;
-					}
-
+					if(tp_length<55)
+						continue;
 					else
-						s = s + max(1, j - badchar[t_array[s+j]]);
+					{
+						for(int k=0;k<55;k++)
+						{
+							
+							t_array[k]=tp_array[k];
+						}
+					}
+
+					int t_length = t_array.length;
+
+					
+
+					// if(count1 > 0)
+					// {
+					// 	continue;
+					// }
+
+					bad(p_array, p_length, badchar);
+
+					int s=0;
+
+					while(s<= (t_length- p_length))
+					{
+						int j=p_length-1;
+
+						while(j>=0 && p_array[j]==t_array[s+j])
+						{
+							j--;
+						}
+
+						if(j<0)
+						{
+							System.out.println("Patterns occur at shift = " + (s+1) + " " + count);
+
+							if(s+p_length < t_length)
+								s = s + p_length - badchar[t_array[s+p_length]];
+							else
+								s = s + 1;
+						}
+
+						else
+							s = s + max(1, j - badchar[t_array[s+j]]);
+					}
 				}
+
+
 
 				
 				
