@@ -28,6 +28,8 @@ class lps
                     t_i++;
 
                 }
+
+                
                 else
                 {
                     if(lps_len!=0)
