@@ -112,6 +112,7 @@ class rabinkarp1
 						res = (i+1)%50+((i+1)%50)/10;
 						if((i+1)%50==0)
 							res = 50;
+						//writing section
 						mywriter.write("word occurs in line num " + ((i+1)/50+22+(i/500)) + " and column num " + res +"\n");
 	    				//System.out.println("word occurs in line num " + ((i+1)/50+22+(i/500)) + " and column num " + res +" "+i+"\n");
 	    			}
