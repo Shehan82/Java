@@ -8,6 +8,7 @@ class knapsack
 		int i,j;
 		int n = value.length;
 		int[] weightnew = new int[n];
+		int[] valuenew = new int[n];
 		int[] k = new int[n];
 		Integer[] divide = new Integer[n];
 
@@ -19,7 +20,7 @@ class knapsack
 		Arrays.sort(divide, Collections.reverseOrder());
 
 
-		System.out.print(Arrays.toString(divide));
+		System.out.println(Arrays.toString(divide));
 
 		for(i=0;i<n;i++)
 		{
@@ -31,6 +32,7 @@ class knapsack
 					{
 						k[j]=1;
 						weightnew[i]=weight[j];
+						valuenew[i]=value[j];
 						break;
 						
 					}
@@ -39,10 +41,12 @@ class knapsack
 			}
 		}
 
-		System.out.print(Arrays.toString(weightnew));
+		System.out.println(Arrays.toString(weightnew));
+		System.out.println(Arrays.toString(valuenew));
+	
 
 
-		float [] x = new float[n];
+		double [] x = new double[n];
 		for(i=0; i<n; i++)
 		{
 			x[i]=0;
@@ -56,82 +60,63 @@ class knapsack
 			
 			if(wt+weightnew[p]<=w)
 			{
-				x[p]=1*value[p];
+				x[p]=1*valuenew[p];
 				wt = wt + weightnew[p];
 			}
 			else
 			{
-				x[p]=((w-wt)*value[p]/weightnew[p]);
+				x[p]=((w-wt)*valuenew[p]/weightnew[p]);
 				wt = w;
 			}
 			p++;
 		}
 
+		double sum = 0;
+		for(double num : x)
+		{
+			sum = sum + num;
+		}
+
+		int sum1 = (int) sum;
+
 		System.out.print(Arrays.toString(x));
+		System.out.print(sum1);
 
 	}
 
 	public static void main(String[] args)
 	{
-		int[] w = {1,2,3};
-		int[] v = {6,10,12};
-		int num = 5;
+		Scanner scan = new Scanner(System.in);
+		int w = scan.nextInt();
+		int n = scan.nextInt();
 
-		knap(w,v,num);
+		int t;
 
+		int[] numOfBottles = new int[n];
+		int[] value = new int[n];
 
+		for(t=0; t<n;t++)
+		{
+			int a = scan.nextInt();
+			numOfBottles[t]=a;
+		}
 
+		for(t=0; t<n;t++)
+		{
+			int b = scan.nextInt();
+			value[t]=b;
+		}
 
+		// int[] w = new int[n];
+		// int[] v = new int[n];
 
+		// int[] w = {1,2,3};
+		// int[] v = {6,10,24};
+		// int num = 5;
 
-
-
-
-
-
-
-
-
-
-
-
-		// int i,j,n=3;
-		// int[] weight = {1,2,3};
-		// int[] value = {6,10,24};
-		// int[] weightnew = new int[n];
-		// int[] k = new int[n];
-		// Integer[] divide = new Integer[n];
-		
-		
-		// for(i=0; i<n; i++)
-		// {
-		// 	divide[i]=(value[i]/weight[i]);
-		// }
-
-		// Arrays.sort(divide, Collections.reverseOrder());
+		knap(numOfBottles,value,w);
 
 
-		// System.out.print(Arrays.toString(divide));
-
-		// for(i=0;i<n;i++)
-		// {
-		// 	for(j=0;j<n;j++)
-		// 	{
-		// 		if(k[j]==0)
-		// 		{
-		// 			if(divide[i]*weight[j]==value[j])
-		// 			{
-		// 				k[j]=1;
-		// 				weightnew[i]=weight[j];
-		// 				break;
-						
-		// 			}
-		// 		}
-				
-		// 	}
-		// }
-
-		// System.out.print(Arrays.toString(weightnew));
 	}
 
 	
