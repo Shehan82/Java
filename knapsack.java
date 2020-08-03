@@ -42,31 +42,42 @@ class knapsack
 		System.out.print(Arrays.toString(weightnew));
 
 
-		int [] x = new double[n];
+		float [] x = new float[n];
 		for(i=0; i<n; i++)
 		{
-			x[i]=0.0;
+			x[i]=0;
 		}
 
 		int wt=0;
+		int p=0;
 
 		while(wt<w)
 		{
-			int i=0;
-			if(wt+weight[i]<=w)
+			
+			if(wt+weightnew[p]<=w)
 			{
-				x[i]=1;
+				x[p]=1*value[p];
+				wt = wt + weightnew[p];
 			}
+			else
+			{
+				x[p]=((w-wt)*value[p]/weightnew[p]);
+				wt = w;
+			}
+			p++;
 		}
+
+		System.out.print(Arrays.toString(x));
 
 	}
 
 	public static void main(String[] args)
 	{
 		int[] w = {1,2,3};
-		int[] v = {6,10,24};
+		int[] v = {6,10,12};
+		int num = 5;
 
-		knap(w,v);
+		knap(w,v,num);
 
 
 
