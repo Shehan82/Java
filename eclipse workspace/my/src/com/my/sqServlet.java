@@ -8,9 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 public class sqServlet extends HttpServlet {
 	
-	public void doPost(HttpServletRequest req, HttpServletResponse res ) throws IOException
+	public void doGet(HttpServletRequest req, HttpServletResponse res ) throws IOException
 	{
-		res.getWriter().println("hello i'am from sqservlet");
+		int k = (int)req.getAttribute("k");
+		
+		res.getWriter().println(k+k);
 	}
 
 }

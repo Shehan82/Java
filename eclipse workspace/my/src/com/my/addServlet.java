@@ -10,15 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 
 public class addServlet extends HttpServlet 
 {
-	public void doPost(HttpServletRequest req, HttpServletResponse res ) throws IOException, ServletException
+	public void doGet(HttpServletRequest req, HttpServletResponse res ) throws IOException, ServletException
 	{
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j = Integer.parseInt(req.getParameter("num2"));
 		
 		int k = i+j;
 		
-		res.getWriter().println(k);
+//		res.getWriter().println(k);
 		
+		req.setAttribute("k", k);
 		RequestDispatcher rd = req.getRequestDispatcher("sq");
 		rd.forward(req, res);
 	}
