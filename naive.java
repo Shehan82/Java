@@ -19,6 +19,10 @@ class naive
 		{
 			int j=0;
 
+			while(j<m && tarray[i+j]==parray[j])
+			{
+				j++;
+
 			// while(j<m && tarray[i+j]==parray[j])
 			// {
 			// 	j++;
@@ -34,6 +38,7 @@ class naive
 				{
 					break;
 				}
+
 			}
 
 			if(j==m)
