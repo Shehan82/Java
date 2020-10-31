@@ -10,7 +10,7 @@ public class sqServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest req, HttpServletResponse res ) throws IOException
 	{
-		int k = (int)req.getAttribute("k");
+		int k = Integer.parseInt(req.getParameter("k"));
 		
 		res.getWriter().println(k+k);
 	}

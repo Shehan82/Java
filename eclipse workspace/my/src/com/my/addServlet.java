@@ -17,11 +17,16 @@ public class addServlet extends HttpServlet
 		
 		int k = i+j;
 		
-//		res.getWriter().println(k);
+////		res.getWriter().println(k);
+//		//pass k to the sq
+//		req.setAttribute("k", k);
+//		
+//		//call to the sq
+//		RequestDispatcher rd = req.getRequestDispatcher("sq");
+//		rd.forward(req, res);
 		
-		req.setAttribute("k", k);
-		RequestDispatcher rd = req.getRequestDispatcher("sq");
-		rd.forward(req, res);
+		res.sendRedirect("sq?k="+k);
+		 
 	}
 	
 	
