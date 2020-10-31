@@ -17,4 +17,14 @@ public class addServlet extends HttpServlet
 		
 		res.getWriter().println(k);
 	}
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res ) throws IOException
+	{
+		int i = Integer.parseInt(req.getParameter("num1"));
+		int j = Integer.parseInt(req.getParameter("num2"));
+		
+		int k = i+j;
+		
+		res.getWriter().println(k);
+	}
 }
