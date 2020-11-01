@@ -9,7 +9,29 @@ public class AddtoDB extends HttpServlet {
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 	{
+		
+		int id = Integer.parseInt(req.getParameter("id"));
+		String name = req.getParameter("name");
+		String school = req.getParameter("school");
+		String grade = req.getParameter("grade");
+		student s1 = new student();
+		s1.id = id;
+		s1.name = name;
+		s1.school = school;
+		s1.grade = grade;
+		
 		studentDAO dao = new studentDAO();
+		try 
+		{
+			dao.connect();
+			dao.addStudent(s1);
+		} 
+		catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 }
@@ -36,8 +58,6 @@ class studentDAO
 		pst.setString(4, s.grade);
 		
 		pst.executeUpdate();
-		
-		
 		return s;
 		
 		

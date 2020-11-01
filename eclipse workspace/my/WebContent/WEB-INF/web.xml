@@ -21,5 +21,15 @@
 	<url-pattern>/sq</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>dbServlet</servlet-name>
+	<servlet-class>com.my.AddtoDB</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>dbServlet</servlet-name>
+	<url-pattern>/addDB</url-pattern>
+</servlet-mapping>
+
 
 </web-app>
