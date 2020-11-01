@@ -24,5 +24,9 @@
 	 	Name: <h1 style="color:red"><%  out.println(rs.getString(3)); %></h1>
 	 </div>
 	 
+	 <% st.close();
+	 	con.close();
+	 	%>
+	 
 </body>
 </html>
