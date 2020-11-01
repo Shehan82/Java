@@ -28,7 +28,7 @@
 		else
 		{
 			out.println("Your full name display here!");
-		}
+		} 
 		
 	%>
 	
