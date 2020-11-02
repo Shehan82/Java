@@ -33,7 +33,21 @@ public class AddtoDB extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		res.getWriter().println(name);
+		
+		
+		try 
+		{
+			student s2 = dao.viewStudent(1);
+			res.getWriter().println(s2.id);
+			res.getWriter().println(s2.name);
+			res.getWriter().println(s2.school);
+			res.getWriter().println(s2.grade);
+			
+		} 
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		
