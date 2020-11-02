@@ -68,6 +68,20 @@ class studentDAO
 		
 		
 	}
+	
+	public student viewStudent(int id) throws SQLException
+	{
+		student s = new student();
+		String query = "select * from student where id="+id;
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(query);
+		rs.next();
+		s.id = rs.getInt(1);
+		s.name = rs.getString(2);
+		s.school = rs.getString(3);
+		s.grade = rs.getString(4);
+		return s;
+	}
 }
 
 class student
