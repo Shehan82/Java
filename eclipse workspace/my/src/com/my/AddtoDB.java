@@ -38,6 +38,8 @@ public class AddtoDB extends HttpServlet {
 
 class studentDAO
 {
+	
+	
 	Connection con = null;
 	
 	public void connect() throws Exception
@@ -48,7 +50,7 @@ class studentDAO
 	
 	
 	
-	public student addStudent(student s) throws Exception
+	public void addStudent(student s) throws Exception
 	{
 		String query = "insert into student values (?,?,?,?)";
 		PreparedStatement pst = con.prepareStatement(query);
@@ -58,9 +60,6 @@ class studentDAO
 		pst.setString(4, s.grade);
 		
 		pst.executeUpdate();
-		return s;
-		
-		
 	}
 }
 
