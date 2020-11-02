@@ -1,13 +1,15 @@
 package com.my;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
+import java.io.IOException;
 
 public class AddtoDB extends HttpServlet {
 	
-	public void doPost(HttpServletRequest req, HttpServletResponse res)
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
 	{
 		
 		int id = Integer.parseInt(req.getParameter("id"));
@@ -30,6 +32,9 @@ public class AddtoDB extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		res.getWriter().println(name);
+		
 		
 		
 	}
@@ -59,7 +64,9 @@ class studentDAO
 		pst.setString(3, s.school);
 		pst.setString(4, s.grade);
 		
-		pst.executeUpdate();
+		int ok = pst.executeUpdate();
+		
+		
 	}
 }
 
