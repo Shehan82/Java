@@ -130,10 +130,47 @@
                     <th>View</th>
                 </tr>
                 <tbody id="tbl"></tbody>
+                <tr>
+                    <td>skjdf</td>
+                    <td>slkdf</td>
+                    <td>lsdkf</td>
+                    <td>skdlfj</td>
+                    <td>
+                    	<button title='view employee details' class = 'btn34' onclick = 'show()'><i class='fa fa-eye'></i></button>
+                    </td>
+                </tr>
             </table>
         </div>
     </div>
 </div>
+
+	<%
+		Class.forName("com.mysql.jdbc.Driver");
+	
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/salon","root","");
+	
+		Statement st = con.createStatement();
+		
+		ResultSet rs = st.executeQuery("select * from managers ");
+		
+		
+	 %>
+	 
+	 <%
+	 	while(rs.next())
+	 	{
+	 		out.println(rs.getString("name"));
+	 	}
+	 
+	 %>
+	 
+	 <% 
+	 rs.next();
+	 st.close();
+	 	con.close();
+	 %>
+	 
+
 
     
 
