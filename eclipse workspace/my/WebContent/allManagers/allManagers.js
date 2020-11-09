@@ -31,9 +31,10 @@ for(i=0;i<journal.length;i++)
 document.getElementById("tbl").innerHTML = text;
 
 
-function show()
+function show(event)
 {
     document.getElementById("pop").style.display="block";
+    console.log(event);
 }
 
 function hide()

@@ -23,12 +23,15 @@ $("document").ready(function(){
 			{
 				
 			    $.get("add", function(response) {
+			    	var json = response;
 			        $("#det").html(response[2].name);
 			       
 			     });
 			});
 
-})
+});
+
+console.log(json[2].name);
 
 </script>	
 	
