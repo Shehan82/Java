@@ -23,15 +23,12 @@ $("document").ready(function(){
 			{
 				
 			    $.get("add", function(response) {
-			        $("#det").html(response);
+			        $("#det").html(response[2].name);
 			       
 			     });
 			});
 
 })
-
-		
-		
 
 </script>	
 	
