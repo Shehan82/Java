@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="popup2.css">
     <link rel="stylesheet" href="sideNavBar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     
     <title>Document</title>
@@ -142,42 +143,34 @@
                     <th>NIC</th>
                     <th>View</th>
                 </tr>
-                <tbody id="tbl"></tbody>	
-                
-                	<% 
-                		while(rs.next())
-                		{
-                			%>
-                			<tr>
-		                	<td><%out.println(rs.getString("eid"));%></td>
-		                    <td><%out.println(rs.getString("name"));%></td>
-		                    <td><%out.println(rs.getString("cNum"));%></td>
-		                    <td><%out.println(rs.getString("nic"));%></td>
-		                    <td>
-		                    	<button title='view employee details' class = 'btn34' onclick = 'show()'><i class='fa fa-eye'></i></button>
-		                    </td>
-		                    </tr>
-                			<%
-                		}
-                	%>
-                   
+                <tbody id="tbl"></tbody>
                 
             </table>
         </div>
     </div>
 </div>
 
+	<button id="btn">hello</button>
+	<h1 id="det"></h1>
 	
-	 
-	 
-	 
-	 <% 
-	
-		st.close();
-	 	con.close();
-	 %>
-	 
 
+	 
+<script type="text/javascript">
+
+	$("document").ready(function(){
+		$("#btn").click(function()
+				{
+					
+				    $.get("add", function(response) {
+				        $("#det").html(response[2].name);
+				       
+				     });
+				});
+	});
+
+
+
+</script>	
 
     
 
