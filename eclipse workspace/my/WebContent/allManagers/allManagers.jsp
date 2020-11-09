@@ -29,6 +29,7 @@
 		ResultSet rs = st.executeQuery("select * from managers ");
 		
 		
+		
 	 %>
     <!-- //////////////////////////////////////// -->
    <!-- update manager -->
@@ -141,7 +142,7 @@
                     <th>NIC</th>
                     <th>View</th>
                 </tr>
-                <tbody id="tbl"></tbody>
+                <tbody id="tbl"></tbody>	
                 
                 	<% 
                 		while(rs.next())
@@ -168,17 +169,11 @@
 
 	
 	 
-	 <%
-	 	while(rs.next())
-	 	{
-	 		out.println(rs.getString("name"));
-	 	}
 	 
-	 %>
 	 
 	 <% 
-	 rs.next();
-	 st.close();
+	
+		st.close();
 	 	con.close();
 	 %>
 	 
