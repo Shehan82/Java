@@ -18,6 +18,18 @@
     <title>Document</title>
 </head>
 <body onresize="whenResizing()">
+
+	<%
+		Class.forName("com.mysql.jdbc.Driver");
+	
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/salon","root","");
+	
+		Statement st = con.createStatement();
+		
+		ResultSet rs = st.executeQuery("select * from managers ");
+		
+		
+	 %>
     <!-- //////////////////////////////////////// -->
    <!-- update manager -->
     <div id="pop3" class="popup3">
@@ -63,7 +75,7 @@
             </div>
 
             <div class="bar">
-                <div> <b>Employee Id </b>  <input  type="text" value="Shehan Sandeepa" disabled></div>
+                <div> <b>Employee Id </b>  <input  type="text" value="hvgj" disabled></div>
                 <div> <b>Name </b>  <input type="text" value="emp001" disabled></div>
                 <div> <b>Contact Num </b>  <input type="text" value="emp001" disabled></div>
                 <div> <b>Salary </b>  <input type="text" value="emp001" disabled></div>
@@ -130,31 +142,31 @@
                     <th>View</th>
                 </tr>
                 <tbody id="tbl"></tbody>
-                <tr>
-                    <td>skjdf</td>
-                    <td>slkdf</td>
-                    <td>lsdkf</td>
-                    <td>skdlfj</td>
-                    <td>
-                    	<button title='view employee details' class = 'btn34' onclick = 'show()'><i class='fa fa-eye'></i></button>
-                    </td>
-                </tr>
+                
+                	<% 
+                		while(rs.next())
+                		{
+                			%>
+                			<tr>
+		                	<td><%out.println(rs.getString("eid"));%></td>
+		                    <td><%out.println(rs.getString("name"));%></td>
+		                    <td><%out.println(rs.getString("cNum"));%></td>
+		                    <td><%out.println(rs.getString("nic"));%></td>
+		                    <td>
+		                    	<button title='view employee details' class = 'btn34' onclick = 'show()'><i class='fa fa-eye'></i></button>
+		                    </td>
+		                    </tr>
+                			<%
+                		}
+                	%>
+                   
+                
             </table>
         </div>
     </div>
 </div>
 
-	<%
-		Class.forName("com.mysql.jdbc.Driver");
 	
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/salon","root","");
-	
-		Statement st = con.createStatement();
-		
-		ResultSet rs = st.executeQuery("select * from managers ");
-		
-		
-	 %>
 	 
 	 <%
 	 	while(rs.next())
