@@ -31,5 +31,15 @@
 	<url-pattern>/addDB</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>ManagerS</servlet-name>
+	<servlet-class>com.my.AddManagerServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>ManagerS</servlet-name>
+	<url-pattern>/addManager</url-pattern>
+</servlet-mapping>
+
 
 </web-app>
