@@ -41,5 +41,15 @@
 	<url-pattern>/addManager</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>View</servlet-name>
+	<servlet-class>com.my.ViewManagerServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>View</servlet-name>
+	<url-pattern>/view</url-pattern>
+</servlet-mapping>
+
 
 </web-app>

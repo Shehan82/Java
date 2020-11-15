@@ -24,9 +24,6 @@ public class ManagerModel {
 		return AllManagersDetails;
 		
 		
-		
-		
-		
 	}
 
 }

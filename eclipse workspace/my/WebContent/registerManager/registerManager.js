@@ -40,6 +40,10 @@ function hideContinue()
     document.getElementById("mainPopupDivContinue").style.display="none";
 }
 
+function res()
+{
+	document.getElementById("myForm").reset();
+}
 
 
 
