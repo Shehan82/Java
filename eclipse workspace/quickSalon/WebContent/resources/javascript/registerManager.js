@@ -38,7 +38,9 @@ function showContinue()
 function hideContinue()
 {
     document.getElementById("mainPopupDivContinue").style.display="none";
+    console.log("blaaaaaaaaaaa");
 }
+
 
 
 
