@@ -9,4 +9,14 @@
 	<servlet-name>View</servlet-name>
 	<url-pattern>/upperStaff/owner/allManagers.html/view</url-pattern>
 </servlet-mapping>
+
+<servlet>
+	<servlet-name>addManager</servlet-name>
+	<servlet-class>com.g34.quicksalon.controller.upperStaff.owner.AddManagerServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>addManager</servlet-name>
+	<url-pattern>/upperStaff/owner/registerManager.html/addManager</url-pattern>
+</servlet-mapping>
 </web-app>
