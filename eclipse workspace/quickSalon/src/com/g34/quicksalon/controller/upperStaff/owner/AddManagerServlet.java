@@ -22,17 +22,17 @@ public class AddManagerServlet extends HttpServlet {
 		String lastName = req.getParameter("lastName");
 		int salary = Integer.parseInt(req.getParameter("salary"));
 		String enrollDate = obj.toString();
-		String resignDate = "0000-00-00";
+		String resignDate = "1111-11-11";
 		int upFlag = 1;
 		int leaveFlag = 0;
 		int removeFlag = 0;
-//		int cNum = Integer.parseInt(req.getParameter("cNum"));
+		int cNum = Integer.parseInt(req.getParameter("cNum"));
 		
 		
 		
 		
 		
-		ManagerDetails Manager = new ManagerDetails(nic, firstName, lastName, salary, enrollDate, resignDate, upFlag, leaveFlag, removeFlag);
+		ManagerDetails Manager = new ManagerDetails(nic, firstName, lastName, salary, enrollDate, resignDate, upFlag, leaveFlag, removeFlag, cNum);
 		
 		AddManagerModel model = new AddManagerModel();
 		

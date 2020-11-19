@@ -10,8 +10,11 @@ public class ManagerDetails {
     private int isUpperStaffFlag;
     private int onLeaveFlag;
     private int removedFlag;
+    private int cNum;
 
-    public ManagerDetails(String nic, String firstName, String lastName, int salary, String enrollDate, String resignDate, int isUpperStaffFlag, int onLeaveFlag, int removedFlag) {
+    
+
+	public ManagerDetails(String nic, String firstName, String lastName, int salary, String enrollDate, String resignDate, int isUpperStaffFlag, int onLeaveFlag, int removedFlag, int cNum) {
         this.nic = nic;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,6 +24,7 @@ public class ManagerDetails {
         this.isUpperStaffFlag = isUpperStaffFlag;
         this.onLeaveFlag = onLeaveFlag;
         this.removedFlag = removedFlag;
+        this.cNum = cNum;
     }
 
     public String getNic() {
@@ -95,6 +99,14 @@ public class ManagerDetails {
     public void setRemovedFlag(int removedFlag) {
         this.removedFlag = removedFlag;
     }
+    
+    public int getcNum() {
+		return cNum;
+	}
+
+	public void setcNum(int cNum) {
+		this.cNum = cNum;
+	}
 
 
 
